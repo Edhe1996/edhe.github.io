@@ -15,8 +15,8 @@ tags:
 Mean average precision (mAP) has been widely used in object detection and image retrieval tasks, especially the person re-identification task. Here I will illustrate the calculation of mAP for person re-ID.
 
 ## Calculation
-![mAP](https://github.com/Edhe1996/edhe1996.github.io/blob/master/img/mAP.jpg)
-![area](https://github.com/Edhe1996/edhe1996.github.io/blob/master/img/area.jpg)
+![mAP](/img/mAP.jpg)
+![area](/img/area.jpg)
 Briefly, average precision (AP) is the area under the precision-recall curve. In person re-ID, the gap between every recall value can be calculated as `recall - old_recall = 1 / num_of_true_matches`. The the area is easy to get.
 
 ```python
