@@ -12,15 +12,15 @@ tags:
 
 做了一段时间的person re-identification，一直想写个综述，趁现在还记得，赶紧写点东西。person re-ID中文名可以叫做行人重识别，近几年在CV各大会议上都是十分火爆，而且随着deep learning在这个领域的运用越来越成熟，其识别率也越来越高，虽然在实际应用中还会有各种各样的问题，但最起码我们已经可以看到这个领域的逐渐成熟。我会根据我自己的理解对这个领域做个简单介绍。详细介绍还得等我的毕业论文完成批改，然后会以英文版放出。
 
-## Introduction
+# Introduction
 如果只考虑image-based person re-ID的话，用一句简单的话来说，person re-ID aims to match the images from non-overlapping cameras or **one camera at different time**。前面一种情况就是假设我们现在有一片宽广的场地，里面有两个摄像头，每个在这个场地里经过的人都会被这两个摄像头拍到，我们便能得到两组图片，分别来自于两个摄像头，那么re-ID问题其实并不关注每个人是谁，它主要是想根据其中一个摄像头的图片，来找到另一个摄像头中的与其对应的图片，这里的摄像头数量也可以不止是两个；后面的一种情况更多出现在大门的门禁系统中，行人在不同的时间经过同一个摄像头，我们同样要根据一个时刻的图片来进行匹配。后面这种情况其实较少被研究，那些public datasets也主要是研究前一种情况。
 
 除了image based的方法之外，还有video based person re-ID，这个领域我没有进行过具体研究，如果想要了解更多，建议阅读Liang Zheng *et al.* 的[Person Re-identification: Past, Present and Future](https://arxiv.org/abs/1610.02984)。
 
-## Motivations
+# Motivations
 说motivation那其实就是说其应用。person re-ID的应用可以说是比较广泛的，因为其主要关注不同camera获得的图片之间的匹配，各种安防系统，大型监控系统，都可以运用此技术。
 
-## Methodology
+# Methodology
 在具体进行研究的时候，往往我们要做的事情是根据一张或多张query image来对gallery images进行rank。一张query的情况是single query，多张query的情况就是multi query。而这里的根据主要是各个图片之间的相似度，具体应用时可以使用图片的feature之间的欧式距离，亦或是学习一个距离度量（XQDA and so on)。也就是：
 1. feature extration
 2. metric learning (or use some existed metrics)
