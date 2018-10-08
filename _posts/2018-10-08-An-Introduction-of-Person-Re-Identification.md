@@ -32,6 +32,7 @@ tags:
 然后这里也就可以引出re-ID的两个主要研究方向：
 1. The choice of feature
 2. Metric Learning
+
 第一个研究方向主要是寻找对于光照，尺度等外界干扰因素不敏感的特征描述符，第二个研究方向则是学习一个合适的距离度量，来衡量图片之间的相似度。值得一提的是，随着deep learning方法的逐渐成熟，metric learning的重要性已经不复当年，基本现在的re-ID都是先用一个baseline neural network model(resnet比较常用)去提取图片的feature，然后直接用欧式距离进行rank，metric learning能给这种模型带来的提升十分有限。
 
 除了这两种基本方法之外，还有很多的优化方法被提了出来，诸如利用GAN进行data augmentation，re-ranking，迁移学习等，都具有深入研究的价值。
